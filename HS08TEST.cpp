@@ -1,39 +1,16 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int main()
-{
-    int t;
-    cin>>t;
-    char a;
-
-    while(t--){
-
-        cin>>a;
-
-        if(a== 'B' || a== 'b')
-        {
-
-            cout<< "BattleShip"<<endl;
-        }else if(a== 'C' || a== 'c'){
-
-            cout<<  "Cruiser"<<endl;
-
-        }
-        else if(a== 'D' || a== 'd'){
-
-
-            cout<< "Destroyer"<<endl;
-        }
-        else if(a== 'F' || a== 'f'){
-
-            cout<< "Frigate"<<endl;
-        }
-
-
-
+int main() {
+    int w;
+    float ac_bl;
+    cin>>w;
+    cin>>ac_bl;
+    if(w%5==0 && w<=ac_bl-0.5){
+        cout<<((ac_bl-w)-(0.5));
     }
-
-
-    return 0;
+    else{
+        cout<<ac_bl;
+    }
+	return 0;
 }
