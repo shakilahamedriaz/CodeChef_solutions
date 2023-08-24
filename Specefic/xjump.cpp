@@ -6,7 +6,7 @@ void solve()
     int x,y;
     cin >>x >>y;
 
-    if(x<=y)
+    if(x<y)
     {
         cout<<x<<endl;
     }
