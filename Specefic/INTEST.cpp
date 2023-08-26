@@ -1,21 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
 
+int main()
+{
 
-int n,k,t,cnt=0;
+    int n,k;
+    cin >>n >>k;
+    int cnt=0;
+    while(n--)
+    {
+        int a;
+        cin >>a;
 
-cin>>n>>k;
+        if(a%k==0) cnt++;
 
-for(int i=1; i<=n; i++){
-    cin>>t;
+    }
 
-    if(t%k==0)
+    cout<<cnt<<endl;
 
-        cnt++;
-
-}
-
-cout<<cnt<<endl;
-return 0;
+    return 0;
 }
