@@ -1,19 +1,15 @@
-#include <iostream>
-#include <vector>
-#include <unordered_set>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int T;
-    cin >> T;
+    int t;
+    cin >> t;
 
-    while (T--) {
+    while (t--) {
         int N;
         cin >> N;
 
-        vector<int> types(N);
-        vector<int> nutrition(N);
+        vector<int> types(N), nutrition(N);
 
         for (int i = 0; i < N; ++i) {
             cin >> types[i];
@@ -23,28 +19,22 @@ int main() {
             cin >> nutrition[i];
         }
 
-        int maxNutrition = 0;
-        unordered_set<int> st;
+        int ans = 0;
 
-    
-        for (int i = 0; i < N; i++) {
-            st.insert(types[i]);
-        }
+        for (int i = 1; i <= N; i++) {
+            int maxNutrition = INT_MIN;
 
-        
-        vector<int> p(st.begin(), st.end());
-
-        for (int i = 0; i < N; i++) {
-            if (p[i] == nutrition[i]) {
-                int bro = max(nutrition[i], (i + 1 < N) ? nutrition[i + 1] : 0);
-                maxNutrition += max(0, bro);
-            } else {
-                int bro = nutrition[i];
-                maxNutrition += max(0, bro);
+            for (int j = 0; j < N; j++) {
+                if (types[j] == i && nutrition[j] >= 0) {
+                    maxNutrition = max(maxNutrition, nutrition[j]);
+                }
+            }
+            if (maxNutrition > 0) {
+                ans += maxNutrition;
             }
         }
 
-        cout << maxNutrition << endl;
+        cout << ans << endl;
     }
 
     return 0;
