@@ -15,11 +15,12 @@ int main()
         {
             int a, b;
             cin >> a >> b;
-            int temp = (a * 1) + (b * 20);
+            int temp = (a*1)+(b*20);
             arr[i] = temp;
         }
 
-        int max_index = max_element(arr, arr + 22) - arr;
+        int max_index = max_element(arr, arr + 22) - arr;// -- arr, because max_element returns an iterator, and we need the index
+        
         cout << max_index +1 << endl;
     }
 
