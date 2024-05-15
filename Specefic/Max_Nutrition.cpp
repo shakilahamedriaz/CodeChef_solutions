@@ -10,7 +10,6 @@ int main() {
         cin >> N;
 
         vector<int> types(N), nutrition(N);
-
         for (int i = 0; i < N; ++i) {
             cin >> types[i];
         }
@@ -20,6 +19,7 @@ int main() {
         }
 
         int ans = 0;
+//__________________________________________________________
 
         for (int i = 1; i <= N; i++) {
             int maxNutrition = INT_MIN;

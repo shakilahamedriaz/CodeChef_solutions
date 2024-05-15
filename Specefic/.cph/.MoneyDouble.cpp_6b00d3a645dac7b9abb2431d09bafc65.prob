@@ -1,0 +1,1 @@
+{"name":"Local: MoneyDouble","url":"e:\\Competative Progtamming\\CodeChef_solutions\\Specefic\\MoneyDouble.cpp","tests":[{"id":1715784769342,"input":"3\n10000 3\n1 2\n999 1","output":"80000\n2002\n1999"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Competative Progtamming\\CodeChef_solutions\\Specefic\\MoneyDouble.cpp","group":"local","local":true}
