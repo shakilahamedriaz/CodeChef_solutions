@@ -1,55 +1,55 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+#pragma GCC optimize("Ofast,unroll-loops")
+#pragma GCC target("avx,avx2,fma")
 #define ll long long
+#define ld long double
+#define PI 3.1415926535897932384626433832795
+using namespace std;
 
+int gcd(int a, int b) { if(a % b == 0) return b; else return gcd(b, a % b); }
+int lcm(int a, int b) { return (a * b) / gcd(a, b); }
 
-vector<ll> v1, v2, v3; // Initialize vectors with size 0
-
-int sumofdigits(ll n)
+struct Runtime 
 {
-    ll sum=0;
-    while(n>0)
-    {
-        sum+=n%10;
-        n/=10;
+    clock_t start;
+    Runtime() {
+        start = clock();
     }
+    ~Runtime() {
+        cout << "Runtime: " << fixed << setprecision(3) << (double) (clock() - start) / CLOCKS_PER_SEC << "s\n";
+    }
+};
 
-    return sum;
-}
 
-
-
-int main()
+void shakil_sol() 
 {
-    ll sum = 0;
-    for(ll i=1; i<1000000; i++)
-    {
-        sum+=sumofdigits(i);
-        v1.push_back(sum);
-    }
-
-    for(ll i=1000000; i<1000000000000; i++)
-    {
-        sum+=sumofdigits(i);
-        v2.push_back(sum);
-    }
-
-    for(ll i=1000000000000; i<1000000000000000000; i++)
-    {
-        sum+=sumofdigits(i);
-        v3.push_back(sum);
-    }
-
-    ll t; cin >> t;
+    int t;
+    cin >>t;
     while(t--)
     {
-        ll n;
-        cin >> n;
-        
-        if(n<1000000) cout << v1[n] << "\n";
-        else if(n<1000000000000) cout << v2[n] << "\n";
-        else cout << v3[n] << "\n";
+            ll numb, ans = 0, tm, total;
+            cin >> numb;
+     
+            total= numb/9;
+            ans+=total * 45;
+            
+            tm = numb - (total * 9);
+            ans+= (tm*(tm+1))/2;
+
+            cout<< ans << "\n";
+
+     }
+
+   
     }
+
+int32_t main() {
+
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    
+    shakil_sol();
 
     return 0;
 }
